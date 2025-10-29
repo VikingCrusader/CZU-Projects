@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshRoots Paper Prototype</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="lan">
+      <span>Language:</span>
+      <button class="Language_button">
+        <img src="img/language_en.png" width="25px">ENGLISH</button>
+      <button class="Language_button">
+        <img src="img/language_cz.jpg" width="20px" alt="">ČEŠTINA</button>
+      <button class="Language_button">
+        <img src="img/language_de.jpg" width="20px">DEUTSCH</button>
+      <button class="Language_button">
+        <img src="img/language_cn.png" width="20px">简体中文</button>
+      <button class="Language_button">
+        <img src="img/language_cnt.png" width="20px">繁體中文</button>
+    </div>
+      <!-- Navigation Controls -->
+      <div class="controls">
+        <span>
+          <img src="img/logo.png" id="logo" />
+        </span>
+        <h1 id="slogan">Know Your Farmer, Love Your Food</h1>
+        <button onclick="showScreen('home')" class="active" id="btn-home">
+          Home
+        </button>
+        <button onclick="showScreen('browse')" id="btn-browse">
+          Browse Products
+        </button>
+        <button onclick="showScreen('map')" id="btn-map">Map View</button>
+        <button onclick="showScreen('farmer')" id="btn-farmer">
+          Farmer Profile
+        </button>
+        <button onclick="showScreen('cart')" id="btn-cart">
+          Shopping Cart
+        </button>
+      </div>
+
+      <!-- HOME PAGE -->
+      <div id="home" class="screen active">
+        <div class="header">
+          <div class="logo">FreshRoots Cooperative</div>
+          <div class="nav">
+            <div class="nav-item">Login</div>
+            <div class="nav-item">🛒 Cart (0)</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="hero">
+            <h1>🌱 Connecting Local Farmers with Consumers</h1>
+            <p>Fresh, Local, Direct to Your Door</p>
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Search products, farmers..." />
+            <button>Search</button>
+          </div>
+          <div class="annotation">
+            💡 Note: Hero section - can display carousel or featured farms
+          </div>
+          <h2>🔥 Featured Products</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/tomato.jpg" width="140px" />
+              </div>
+              <div class="product-name">Organic Tomatoes</div>
+              <div class="farmer-info">👨‍🌾 Green Valley Farm</div>
+              <div class="product-price">€4.99/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/lettuce.jpg" width="140px">
+              </div>
+              <div class="product-name">Fresh Lettuce</div>
+              <div class="farmer-info">👩‍🌾 Sunny Acres</div>
+              <div class="product-price">€3.49/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/milk.jpg" width="220px">
+              </div>
+              <div class="product-name">Fresh Milk</div>
+              <div class="farmer-info">👨‍🌾 Happy Cows Dairy</div>
+              <div class="product-price">€6.99/L</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BROWSE PRODUCTS PAGE -->
+      <div id="browse" class="screen">
+        <div class="header">
+          <div class="logo">FreshRoots Cooperative</div>
+          <div class="nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Login</div>
+            <div class="nav-item">🛒 Cart (0)</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>Browse Local Products</h1>
+          <div class="filter-section">
+            <strong>Filter by:</strong>
+            <button class="filter-btn">🍎 Fruits</button>
+            <button class="filter-btn">🥕 Vegetables</button>
+            <button class="filter-btn">🥛 Dairy</button>
+            <button class="filter-btn">🥚 Eggs</button>
+            <button class="filter-btn">📍 Distance < 10 km</button>
+          </div>
+          <div class="annotation">
+            💡 Note: Interactive filtering system - filter by product category
+            or distance
+          </div>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/strawberry.jpg" height="140px">
+              </div>
+              <div class="product-name">Organic Strawberries</div>
+              <div class="farmer-info">👩‍🌾 Berry Best Farm · 5 kms</div>
+              <div class="product-price">€5.99/box</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/carrots.jpg" height="140px">
+              </div>
+              <div class="product-name">Rainbow Carrots</div>
+              <div class="farmer-info">👨‍🌾 Root Harvest · 3 kms</div>
+              <div class="product-price">€3.99/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/bread.jpg" height="140px">
+              </div>
+              <div class="product-name">Artisan Bread</div>
+              <div class="farmer-info">👨‍🍳 Artisan Bakery · 7 kms</div>
+              <div class="product-price">€7.99/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/eggs.jpg" height="130px">
+              </div>
+              <div class="product-name">Free-Range Eggs</div>
+              <div class="farmer-info">👩‍🌾 Free Range Farm · 4 kms</div>
+              <div class="product-price">€6.49/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP VIEW PAGE -->
+      <div id="map" class="screen">
+        <div class="header">
+          <div class="logo">FreshRoots Cooperative</div>
+          <div class="nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Browse Products</div>
+            <div class="nav-item">🛒 Cart (0)</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>📍 Farmers Near You</h1>
+          <div class="map-container">
+            <img src="img/map.png" height="400px" width="100%">
+          </div>
+          <div class="filter-section">
+            <strong>Map Filters:</strong>
+            <button class="filter-btn">🍎 Fruit Farms</button>
+            <button class="filter-btn">🥕 Vegetable Farms</button>
+            <button class="filter-btn">🥛 Dairy Farms</button>
+            <button class="filter-btn">📏 Within 5 kms</button>
+            <button class="filter-btn">📏 Within 10 kms</button>
+          </div>
+          <h3>Farms on Map:</h3>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/farm2.jpg" height="130px">
+              </div>
+              <div class="product-name">Green Valley Farm</div>
+              <div class="farmer-info">📍 2.3 km · Vegetables, Fruits</div>
+              <button class="btn-primary">View Farm</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/farm3.jpg" height="140px">
+              </div>
+              <div class="product-name">Sunny Acres</div>
+              <div class="farmer-info">📍 4.7 km · Vegetables</div>
+              <button class="btn-primary">View Farm</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/farm1.jpg" height="120px">
+              </div>
+              <div class="product-name">Happy Cows Dairy</div>
+              <div class="farmer-info">📍 6.1 km · Dairy Products</div>
+              <button class="btn-primary">View Farm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FARMER PROFILE PAGE -->
+      <div id="farmer" class="screen">
+        <div class="header">
+          <div class="logo">FreshRoots Cooperative</div>
+          <div class="nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Browse Products</div>
+            <div class="nav-item">🛒 Cart (0)</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="farmer-profile">
+            <div>
+              <div class="farmer-avatar">
+                <img src="img/farmer.jpg" height="130px">
+              </div>
+            </div>
+            <div class="farmer-details">
+              <h2>Green Valley Farm</h2>
+              <p>📍 Distance: 2.3 km</p>
+              <p>📞 Phone: +420 776 487 325</p>
+              <p>📧 Email: jamesGreenValley@gmail.com</p>
+              <p>📸 INSTAGRAM: greenvalleyfarmpraha</p>
+              <p>🌱 Farming Method: Certified Organic</p>
+              <div class="annotation">
+                💡 Note: Farmer profile page - displays photos and detailed
+                information
+              </div>
+              <h3>About Our Farm</h3>
+              <p>
+                We are a family-run organic farm focused on growing fresh
+                seasonal vegetables and fruits. Operating locally for over 20
+                kg.
+              </p>
+              <button class="btn-primary">Follow Farm</button>
+              <button class="btn-primary">Send Message</button>
+            </div>
+          </div>
+          <h3>🛒 Our Products</h3>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/tomato.jpg" height="140px" >
+              </div>
+              <div class="product-name">Organic Tomatoes</div>
+              <div class="product-price">€4.99/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/cucumber.jpg" height="140px">
+              </div>
+              <div class="product-name">Fresh Cucumbers</div>
+              <div class="product-price">€2.99/kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img src="img/corn.jpg" height="140px">
+              </div>
+              <div class="product-name">Sweet Corn</div>
+              <div class="product-price">€3.49/6 kg</div>
+              <button class="btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOPPING CART PAGE -->
+      <div id="cart" class="screen">
+        <div class="header">
+          <div class="logo">FreshRoots Cooperative</div>
+          <div class="nav">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Continue Shopping</div>
+          </div>
+        </div>
+        <div class="content">
+          <h1>🛒 My Shopping Cart</h1>
+          <div class="annotation">
+            💡 Note: Registered users can manage shopping cart and orders
+          </div>
+          <div class="cart-item">
+            <div>
+              <strong>🍅 Organic Tomatoes</strong>
+              <div class="farmer-info">Green Valley Farm</div>
+            </div>
+            <div>
+              <input
+                type="number"
+                value="2"
+                style="width: 50px; padding: 5px"
+              />
+              kg
+            </div>
+            <div>
+              <strong>€9.98</strong>
+              <button
+                style="
+                  margin-left: 10px;
+                  color: red;
+                  border: none;
+                  background: none;
+                  cursor: pointer;
+                "
+              >
+                🗑️
+              </button>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div>
+              <strong>🥬 Fresh Lettuce</strong>
+              <div class="farmer-info">Sunny Acres</div>
+            </div>
+            <div>
+              <input
+                type="number"
+                value="1"
+                style="width: 50px; padding: 5px"
+              />
+              kg
+            </div>
+            <div>
+              <strong>€3.49</strong>
+              <button
+                style="
+                  margin-left: 10px;
+                  color: red;
+                  border: none;
+                  background: none;
+                  cursor: pointer;
+                "
+              >
+                🗑️
+              </button>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div>
+              <strong>🥛 Fresh Milk</strong>
+              <div class="farmer-info">Happy Cows Dairy</div>
+            </div>
+            <div>
+              <input
+                type="number"
+                value="1"
+                style="width: 50px; padding: 5px"
+              />
+              L
+            </div>
+            <div>
+              <strong>€6.99</strong>
+              <button
+                style="
+                  margin-left: 10px;
+                  color: red;
+                  border: none;
+                  background: none;
+                  cursor: pointer;
+                "
+              >
+                🗑️
+              </button>
+            </div>
+          </div>
+          <div class="cart-summary">
+            <h3>Order Summary</h3>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span>Subtotal:</span>
+              <strong>€20.46</strong>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span>Delivery Fee:</span>
+              <strong>€3.00</strong>
+            </div>
+            <hr />
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                font-size: 20px;
+              "
+            >
+              <strong>Total:</strong>
+              <strong style="color: #2d5a3d">€23.46</strong>
+            </div>
+            <button
+              class="btn-primary"
+              style="
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+                margin-top: 10px;
+              "
+            >
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </div>
+      <p>Developed by Zhang Yiwen, Chien Ching Wen, Feng Mengya</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
